@@ -135,15 +135,6 @@ export default function Home() {
                 resorts, and tourist destinations.
               </p>
 
-              {/* Free machine callout */}
-              <div className="inline-flex items-center gap-3 bg-cyan-500/20 border border-cyan-400/30 rounded-2xl px-5 py-3 mb-8">
-                <span className="text-2xl">🎁</span>
-                <div>
-                  <p className="text-white font-bold text-sm">The machine is provided free.</p>
-                  <p className="text-cyan-200 text-xs">Zero upfront cost. Zero installation fees.</p>
-                </div>
-              </div>
-
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/partner"
