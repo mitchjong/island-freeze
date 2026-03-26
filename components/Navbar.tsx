@@ -2,13 +2,14 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const links = [
   { href: "/", label: "Home" },
-  { href: "/menu", label: "Menu" },
+  { href: "/system", label: "The System" },
   { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
+  { href: "/partner", label: "Partner With Us" },
 ];
 
 export default function Navbar() {
@@ -16,15 +17,19 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-[#0c1a2e]/90 backdrop-blur-md border-b border-white/10">
+    <nav className="fixed top-0 w-full z-50 bg-[#0c1a2e]/92 backdrop-blur-md border-b border-white/10">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <span className="text-2xl">🧊</span>
-            <span className="text-white font-bold text-xl tracking-wide">
-              Island <span className="text-cyan-400">Freeze</span>
-            </span>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/images/logo.png"
+              alt="Island Freeze"
+              width={120}
+              height={60}
+              className="h-10 w-auto object-contain"
+              priority
+            />
           </Link>
 
           {/* Desktop links */}
@@ -43,10 +48,10 @@ export default function Navbar() {
               </Link>
             ))}
             <Link
-              href="/menu"
-              className="bg-cyan-500 hover:bg-cyan-400 text-white text-sm font-semibold px-5 py-2 rounded-full transition-colors"
+              href="/partner"
+              className="bg-[#1a9bd4] hover:bg-cyan-400 text-white text-sm font-bold px-5 py-2 rounded-full transition-colors"
             >
-              Order Now
+              Get the Machine Free
             </Link>
           </div>
 
@@ -85,11 +90,11 @@ export default function Navbar() {
             </Link>
           ))}
           <Link
-            href="/menu"
+            href="/partner"
             onClick={() => setOpen(false)}
-            className="bg-cyan-500 text-white text-sm font-semibold px-5 py-2 rounded-full text-center"
+            className="bg-[#1a9bd4] text-white text-sm font-bold px-5 py-2 rounded-full text-center"
           >
-            Order Now
+            Get the Machine Free
           </Link>
         </div>
       )}
